@@ -33,3 +33,20 @@ df['salary']
 print("\n--- Contagem de Valores Nulos (Depois) ---")
 print(df.isnull().sum())
 
+#%%
+#Renomeando as colunas para melhor intepretação
+
+df.rename(columns={"sl_no" : "Nserie", "gender" : "Genero",
+                   "ssc_p" : "NotaEns_Fundamental","ssc_b" : "Conselho_Ens_Fundamental",
+                     "hsc_p" : "NotaEns_Medio","hsc_b" : "Conselho_Ens_Medio",
+                     "hsc_s" : "Area_Ens_Medio","degree_p" : "Nota_Graduacao",
+                     "degree_t" : "Tipo_Graduacao","workex" : "Exp_Profissional",
+                     "etest_p" : "Nota_Test_Empregabilidade",
+                     "specialisation" : "Especialização","mba_p" : "Nota_Especialização",
+                     "status" : "Status_colocação", "salary" : "salario"
+                     }, inplace=True)
+
+#%%
+df.head()
+#%%
+df.to_csv('Base_Dados/Tratado_Placement_Data_Full_Class.csv')
